@@ -1,0 +1,19 @@
+name: rvm-phantomjs
+version: 1.0.0
+inherits: wercker/rvm@2.4.0
+type: main
+platform: ubuntu@12.04
+packages:
+    - ruby@2.2.0
+keywords:
+    - ruby
+    - rvm
+    - phantomjs
+script: |
+    cd $HOME
+    rm -Rf phantomjs
+    git clone git://github.com/ariya/phantomjs.git
+    cd phantomjs
+    git checkout 2.0
+    yes | ./build.sh
+    phantomjs/bin/phantomjs -v
