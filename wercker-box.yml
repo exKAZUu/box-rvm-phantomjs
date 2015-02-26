@@ -19,4 +19,6 @@ script: |
     cd phantomjs
     git checkout 2.0
     yes | ./build.sh
-    phantomjs/bin/phantomjs -v
+    ls $HOME
+    ls $HOME/phantomjs
+    $HOME/phantomjs/bin/phantomjs -v
