@@ -1,10 +1,10 @@
 name: rvm-phantomjs
-version: 1.0.3
+version: 1.0.4
 inherits: wercker/rvm@2.4.0
 type: main
 platform: ubuntu@12.04
 packages:
-    - ruby@2.2.0
+    - ruby@2.2.1
 keywords:
     - ruby
     - rvm
@@ -18,9 +18,13 @@ script: |
     sudo apt-get -y install g++ flex bison gperf ruby perl libsqlite3-dev libfontconfig1-dev libicu-dev libfreetype6 libssl-dev libpng-dev libjpeg-dev
     sudo apt-get -y install gemnasium-toolbelt
     sudo apt-get -y upgrade
+    rvm get stable
+    rvm install 2.2.1
+    rvm --default use 2.2.1
     git clone git://github.com/ariya/phantomjs.git
     cd phantomjs
     git checkout 2.0.0
     yes | ./build.sh
+    ruby -v
     gemnasium -v
     phantomjs -v
