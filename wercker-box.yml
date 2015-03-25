@@ -1,6 +1,6 @@
 name: rvm-phantomjs
-version: 1.0.5
-inherits: exkazuu/rvm-phantomjs@1.0.3
+version: 1.0.6
+inherits: exkazuu/rvm-phantomjs@1.0.5
 type: main
 platform: ubuntu@12.04
 packages:
@@ -14,19 +14,12 @@ script: |
     sudo apt-get -y update
     sudo apt-get -y upgrade
     sudo apt-get -y clean
-    rvm remove 1.9.3-p547
-    rvm remove 1.9.3-p550
-    rvm remove 1.9.3-p551
-    rvm remove 2.0.0-p594
-    rvm remove 2.0.0-p598
-    rvm remove 2.0.0-p643
-    rvm remove 2.1.3
-    rvm remove 2.1.4
-    rvm remove 2.1.5
-    rvm remove 2.2.0
     rvm get stable
+    rvm cleanup all
     rvm install 2.2.1
     rvm --default use 2.2.1
+    rvm list
+    rvm -v
     ruby -v
     gemnasium -v
     phantomjs -v
