@@ -1,10 +1,10 @@
 name: rvm-phantomjs
-version: 1.0.10
-inherits: exkazuu/rvm-phantomjs@1.0.9
+version: 1.0.11
+inherits: exkazuu/rvm-phantomjs@1.0.10
 type: main
 platform: ubuntu@12.04
 packages:
-    - ruby@2.2.2
+    - ruby@2.2.4
 keywords:
     - ruby
     - rvm
@@ -16,8 +16,8 @@ script: |
     sudo apt-get -y clean
     rvm get stable
     rvm cleanup all
-    rvm install 2.2.2
-    rvm --default use 2.2.2
+    rvm install 2.2.4
+    rvm --default use 2.2.4
     gem install bundler
     rvm list
     rvm -v
